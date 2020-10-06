@@ -8,3 +8,7 @@ void readfile(){
 
 	return;
 }
+
+int my_len(std::string given){
+	return given.length();
+}
