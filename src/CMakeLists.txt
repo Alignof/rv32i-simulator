@@ -1,8 +1,8 @@
-add_library(greetings
+add_library(libs
 	SHARED
-		readfile.cpp
+		init.cpp
 )
 
-target_include_directories(greetings
+target_include_directories(libs
 	PUBLIC ${PROJECT_SOURCE_DIR}/include
 )
