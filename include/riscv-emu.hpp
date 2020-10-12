@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 
@@ -20,9 +21,17 @@ class Register{
 		}
 };
 
+class Instructions{
+	private:
+		;
+	public:
+		;
+};
+
 class Simulator{
 	private:
-		Register reg;
+		Register     reg;
+		Instructions inst;
 	public:
 		void init(){
 			reg.reset();

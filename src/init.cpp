@@ -1,11 +1,8 @@
 #include "riscv-emu.hpp"
 
-void readfile(){
+void readfile(Simulator &sim, String filepath){
+	std::ifstream ifs(filepath);
 	std::string input;
-
-	std::cin >> input;
-	std::cout << input << std::endl;
-
 	return;
 }
 
