@@ -8,6 +8,8 @@ void parse_asm(Simulator &sim, std::string line){
 	 * src1
 	 * src2
 	 */
+		
+	std::cout << line << std::endl;
 
 	return;
 }
@@ -17,7 +19,6 @@ void readfile(Simulator &sim, std::string filepath){
 	std::string line;
 
 	while(getline(ifs, line)){
-		std::cout << line << std::endl;
 		parse_asm(sim, line);
 	}
 
