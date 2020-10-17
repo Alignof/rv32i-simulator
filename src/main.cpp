@@ -11,5 +11,6 @@ int main(int argc, char **argv){
 	}
 
 	readfile(sim,filepath);
+
 	return 0;
 }

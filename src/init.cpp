@@ -1,25 +1,64 @@
 #include "riscv-emu.hpp"
 
-void parse_asm(Simulator &sim, std::string line){
-	/*
-	 * op dist,src1,src2
-	 * opecode
-	 * dist
-	 * src1
-	 * src2
-	 */
+struct Assembly parse_str(std::vector<std::string> asem_str){
+/*
+	enum OperandKind  op;
+	enum RegisterKind dist;
+	enum RegisterKind src1;
+	enum RegisterKind src2;
+*/
+	struct Assembly parsed;
+}
+
+std::vector<std::string> parse_line(std::string &line){
+	std::vector<std::string> asem_str;
+	std::string item;
 		
-	std::cout << line << std::endl;
+	// parse Assembly
+	for(char ch: line){
+		if(ch == ' ' || ch == '\t' || ch == ','){
+			if(!item.empty()){
+				asem_str.push_back(item);
+				item.clear();
+			}
+			continue;
+		}
+
+		item.push_back(ch);
+	}
+	if(!item.empty()){
+		asem_str.push_back(item);
+	}
+
+	// display
+	std::cout << "line:" <<  line << std::endl;
+	std::cout << "parsed:";
+	for(std::string str: asem_str){
+		std::cout << str << " ";
+	}
+	std::cout << std::endl;
+
+	return asem_str;
+}
+
+void parse_asem(Simulator &sim, std::vector<std::string> &line){
+	std::vector<std::string> asem_str;
+	struct Assembly parsed;
+
+	asem_str = parse_line(line);
+	parsed   = parse_str(asem_str);
+	sim.inst.add_inst(parsed);
 
 	return;
 }
 
-void readfile(Simulator &sim, std::string filepath){
+void readfile(Simulator &sim, std::string &filepath){
 	std::ifstream ifs(filepath);
 	std::string line;
 
+	// get line
 	while(getline(ifs, line)){
-		parse_asm(sim, line);
+		parse_asem(sim, line);
 	}
 
 	return;
