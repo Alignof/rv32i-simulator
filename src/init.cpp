@@ -8,9 +8,10 @@ struct Assembly parse_str(std::vector<std::string> asem_str){
 	enum RegisterKind src2;
 */
 	struct Assembly parsed;
+	return parsed;
 }
 
-std::vector<std::string> parse_line(std::string &line){
+std::vector<std::string> parse_line(const std::string &line){
 	std::vector<std::string> asem_str;
 	std::string item;
 		
@@ -41,18 +42,18 @@ std::vector<std::string> parse_line(std::string &line){
 	return asem_str;
 }
 
-void parse_asem(Simulator &sim, std::vector<std::string> &line){
+void parse_asem(Simulator &sim, const std::string &line){
 	std::vector<std::string> asem_str;
 	struct Assembly parsed;
 
 	asem_str = parse_line(line);
-	parsed   = parse_str(asem_str);
-	sim.inst.add_inst(parsed);
+	//parsed   = parse_str(asem_str);
+	//sim.inst.add_inst(parsed);
 
 	return;
 }
 
-void readfile(Simulator &sim, std::string &filepath){
+void readfile(Simulator &sim, const std::string &filepath){
 	std::ifstream ifs(filepath);
 	std::string line;
 
@@ -62,8 +63,4 @@ void readfile(Simulator &sim, std::string &filepath){
 	}
 
 	return;
-}
-
-int my_len(std::string given){
-	return given.length();
 }

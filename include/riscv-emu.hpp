@@ -48,11 +48,10 @@ class Simulator{
 #ifndef __DEFINED__
 #define __DEFINED__
 
-struct Assembly parse_str(std::vector<std::string> asem_str);
-std::vector<std::string> parse_line(std::string &line);
-void parse_asem(Simulator &sim, std::vector<std::string> &line);
-void readfile(Simulator &sim, std::string &filepath);
-int my_len(std::string given);
+struct Assembly		 parse_str(std::vector<std::string> asem_str);
+std::vector<std::string> parse_line(const std::string &line);
+void			 parse_asem(Simulator &sim, const std::string &line);
+void 			 readfile(Simulator &sim, const std::string &filepath);
 
 #endif 
 
