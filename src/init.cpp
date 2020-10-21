@@ -31,6 +31,7 @@ std::vector<std::string> parse_line(const std::string &line){
 		asem_str.push_back(item);
 	}
 
+/*
 	// display
 	std::cout << "line:" <<  line << std::endl;
 	std::cout << "parsed:";
@@ -38,6 +39,7 @@ std::vector<std::string> parse_line(const std::string &line){
 		std::cout << str << " ";
 	}
 	std::cout << std::endl;
+*/
 
 	return asem_str;
 }
