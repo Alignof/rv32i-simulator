@@ -4,7 +4,7 @@ target_link_libraries(unittest
 	PRIVATE
 		GTest::GTest
 		GTest::Main
-		greetings
+		libs
 		pthread
 		util
 )
@@ -13,7 +13,6 @@ add_test(
 	COMMAND $<TARGET_FILE:unittest>
 )
 
-# run with: ctest -L lib
 set_property(
 	TEST mytest
 	PROPERTY LABELS mytest

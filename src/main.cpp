@@ -1,6 +1,16 @@
 #include "riscv-emu.hpp"
 
-int main(void){
-	readfile();
+int main(int argc, char **argv){
+	Simulator sim;
+
+	// default file path
+	std::string filepath = "../tmp/test.s";
+
+	if(argc > 1){
+		filepath = argv[1];
+	}
+
+	readfile(sim,filepath);
+
 	return 0;
 }
