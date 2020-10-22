@@ -1,6 +1,6 @@
 #include "riscv-emu.hpp"
 
-struct Assembly parse_str(std::vector<std::string> asem_str){
+struct Assembly parse_str(std::vector<std::string> asem_vec){
 /*
 	enum OperandKind  op;
 	enum RegisterKind dist;
@@ -8,6 +8,12 @@ struct Assembly parse_str(std::vector<std::string> asem_str){
 	enum RegisterKind src2;
 */
 	struct Assembly parsed;
+	parsed.op = str_to_op(asem_vec[0]);
+
+	for(auto &str: asem_vec){
+		std::cout << str << std::endl;
+	}
+
 	return parsed;
 }
 
@@ -49,7 +55,7 @@ void parse_asem(Simulator &sim, const std::string &line){
 	struct Assembly parsed;
 
 	asem_str = parse_line(line);
-	//parsed   = parse_str(asem_str);
+	parsed   = parse_str(asem_str);
 	//sim.inst.add_inst(parsed);
 
 	return;

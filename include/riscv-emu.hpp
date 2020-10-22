@@ -48,7 +48,8 @@ class Simulator{
 #ifndef __DEFINED__
 #define __DEFINED__
 
-struct Assembly		 parse_str(std::vector<std::string> asem_str);
+enum OperandKind	 str_to_op(std::string asem_str);
+struct Assembly		 parse_str(std::vector<std::string> asem_vec);
 std::vector<std::string> parse_line(const std::string &line);
 void			 parse_asem(Simulator &sim, const std::string &line);
 void 			 readfile(Simulator &sim, const std::string &filepath);
