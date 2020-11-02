@@ -20,7 +20,7 @@ struct Assembly parse_inst(std::vector<std::string> asem_vec){
 struct Direc parse_direc(std::vector<std::string> asem_vec){
 	struct Direc parsed_direc;
 
-	std::cout << "directive:" << asem_vec[0] << std::endl;
+	std::cout << "directive: " << asem_vec[0] << std::endl;
 	return parsed_direc;
 }
 
@@ -46,17 +46,6 @@ std::vector<std::string> parse_line(const std::string &line){
 		asem_str.push_back(item);
 	}
 
-/*
-	// display
-	std::cout << "line:" <<  line << std::endl;
-	std::cout << "parsed:";
-	for(std::string str: asem_str){
-		std::cout << str << " ";
-	}
-	std::cout << std::endl;
-*/
-
-
 	return asem_str;
 }
 
@@ -69,7 +58,7 @@ void parse_asem(Simulator &sim, const std::string &line){
 	// directive
 	if(asem_str[0][0] == '.'){
 		struct Direc direc = parse_direc(asem_str);
-		//sim.inst.add_inst(parsed);
+		//sim.inst.add_direc(parsed);
 	// instruction
 	}else{
 		struct Assembly insts = parse_inst(asem_str);

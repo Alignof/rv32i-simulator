@@ -1,6 +1,6 @@
 
 // riscv-spec-20191213-1.pdf page=130
-typedef enum OperandKind{
+enum OperandKind{
 	OP_LUI,
 	OP_AUIPC,
 	OP_JAL,
@@ -63,7 +63,7 @@ typedef enum OperandKind{
 
 
 // https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md
-typedef enum RegisterKind{
+enum RegisterKind{
 	ABI_zero,       // hardwired to 0, ignores writes       
 	ABI_ra,         // return address for jumps             
 	ABI_sp,         // stack pointer                        
@@ -101,7 +101,7 @@ typedef enum RegisterKind{
 };
 
 // https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md
-typedef enum DirecKind{
+enum DirecKind{
 	DIR_ALIGN,	// .align
 	DIR_FILE,       // .file
 	DIR_GLOBL,      // .globl
