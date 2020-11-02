@@ -1,6 +1,6 @@
 #include "riscv-emu.hpp"
 
-struct Assembly parse_str(std::vector<std::string> asem_vec){
+struct Assembly parse_inst(std::vector<std::string> asem_vec){
 /*
 	enum OperandKind  op;
 	enum RegisterKind dist;
@@ -14,6 +14,13 @@ struct Assembly parse_str(std::vector<std::string> asem_vec){
 		std::cout << str << std::endl;
 	}
 
+	return parsed;
+}
+
+struct Label parse_label(std::vector<std::string> asem_vec){
+	struct Assembly parsed;
+
+	std::cout << "label:" << asem_vec[0] << std::endl;
 	return parsed;
 }
 
@@ -33,6 +40,8 @@ std::vector<std::string> parse_line(const std::string &line){
 
 		item.push_back(ch);
 	}
+
+	// add parsed assembly to vector
 	if(!item.empty()){
 		asem_str.push_back(item);
 	}
@@ -47,16 +56,26 @@ std::vector<std::string> parse_line(const std::string &line){
 	std::cout << std::endl;
 */
 
+
 	return asem_str;
 }
 
 void parse_asem(Simulator &sim, const std::string &line){
 	std::vector<std::string> asem_str;
-	struct Assembly parsed;
+	
 
 	asem_str = parse_line(line);
-	parsed   = parse_str(asem_str);
-	//sim.inst.add_inst(parsed);
+
+	// label
+	if(asem_str[0][0] == '.'){
+		struct Label labels = parse_label(asem_str);
+		//sim.inst.add_inst(parsed);
+	// instruction
+	}else{
+		struct Assembly insts = parse_inst(asem_str);
+		//sim.inst.add_inst(parsed);
+	}
+
 
 	return;
 }
