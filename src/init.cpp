@@ -7,21 +7,21 @@ struct Assembly parse_inst(std::vector<std::string> asem_vec){
 	enum RegisterKind src1;
 	enum RegisterKind src2;
 */
-	struct Assembly parsed;
-	parsed.op = str_to_op(asem_vec[0]);
+	struct Assembly parsed_asem;
+	parsed_asem.op = str_to_op(asem_vec[0]);
 
 	for(auto &str: asem_vec){
 		std::cout << str << std::endl;
 	}
 
-	return parsed;
+	return parsed_asem;
 }
 
-struct Label parse_label(std::vector<std::string> asem_vec){
-	struct Assembly parsed;
+struct Direc parse_direc(std::vector<std::string> asem_vec){
+	struct Direc parsed_direc;
 
-	std::cout << "label:" << asem_vec[0] << std::endl;
-	return parsed;
+	std::cout << "directive:" << asem_vec[0] << std::endl;
+	return parsed_direc;
 }
 
 std::vector<std::string> parse_line(const std::string &line){
@@ -66,9 +66,9 @@ void parse_asem(Simulator &sim, const std::string &line){
 
 	asem_str = parse_line(line);
 
-	// label
+	// directive
 	if(asem_str[0][0] == '.'){
-		struct Label labels = parse_label(asem_str);
+		struct Direc direc = parse_direc(asem_str);
 		//sim.inst.add_inst(parsed);
 	// instruction
 	}else{

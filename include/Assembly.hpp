@@ -101,48 +101,48 @@ typedef enum RegisterKind{
 };
 
 // https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md
-typedef enum LabelKind{
-	LBL_ALIGN,	// .align
-	LBL_FILE,       // .file
-	LBL_GLOBL,      // .globl
-	LBL_LOCAL,      // .local
-	LBL_COMM,       // .comm
-	LBL_COMMON,     // .common
-	LBL_IDENT,      // .ident
-	LBL_SECTION,    // .section
-	LBL_SIZE,       // .size
-	LBL_TEXT,       // .text
-	LBL_DATA,       // .data
-	LBL_RODATA,     // .rodata
-	LBL_BSS,        // .bss
-	LBL_STRING,     // .string
-	LBL_ASCIZ,      // .asciz
-	LBL_EQU,        // .equ
-	LBL_MACRO,      // .macro
-	LBL_ENDM,       // .endm
-	LBL_TYPE,       // .type
-	LBL_OPTION,     // .option
-	LBL_BYTE,       // .byte
-	LBL_2BYTE,      // .2byte
-	LBL_HALF,       // .half
-	LBL_SHORT,      // .short
-	LBL_4BYTE,      // .4byte
-	LBL_WORD,       // .word
-	LBL_LONG,       // .long
-	LBL_8BYTE,      // .8byte
-	LBL_DWORD,      // .dword
-	LBL_QUAD,       // .quad
-	LBL_DTPRELWORD, // .dtprelword 
-	LBL_DTPRELDWORD,// .dtpreldword 
-	LBL_SLEB128,    // .sleb128 
-	LBL_ULEB128,    // .uleb128 
-	LBL_P2ALIGN,    // .p2align 
-	LBL_BALIGN,     // .balign
-	LBL_ZERO,       // .zero
+typedef enum DirecKind{
+	DIR_ALIGN,	// .align
+	DIR_FILE,       // .file
+	DIR_GLOBL,      // .globl
+	DIR_LOCAL,      // .local
+	DIR_COMM,       // .comm
+	DIR_COMMON,     // .common
+	DIR_IDENT,      // .ident
+	DIR_SECTION,    // .section
+	DIR_SIZE,       // .size
+	DIR_TEXT,       // .text
+	DIR_DATA,       // .data
+	DIR_RODATA,     // .rodata
+	DIR_BSS,        // .bss
+	DIR_STRING,     // .string
+	DIR_ASCIZ,      // .asciz
+	DIR_EQU,        // .equ
+	DIR_MACRO,      // .macro
+	DIR_ENDM,       // .endm
+	DIR_TYPE,       // .type
+	DIR_OPTION,     // .option
+	DIR_BYTE,       // .byte
+	DIR_2BYTE,      // .2byte
+	DIR_HALF,       // .half
+	DIR_SHORT,      // .short
+	DIR_4BYTE,      // .4byte
+	DIR_WORD,       // .word
+	DIR_LONG,       // .long
+	DIR_8BYTE,      // .8byte
+	DIR_DWORD,      // .dword
+	DIR_QUAD,       // .quad
+	DIR_DTPRELWORD, // .dtprelword 
+	DIR_DTPRELDWORD,// .dtpreldword 
+	DIR_SLEB128,    // .sleb128 
+	DIR_ULEB128,    // .uleb128 
+	DIR_P2ALIGN,    // .p2align 
+	DIR_BALIGN,     // .balign
+	DIR_ZERO,       // .zero
 };
 
-struct Label{
-	enum LabelKind    label;
+struct Direc{
+	enum DirecKind    dir;
 };
 
 struct Assembly{

@@ -22,7 +22,7 @@ class Register{
 
 class Instructions{
 	private:
-		std::vector<Label>    labels;
+		std::vector<Direc>    direc;
 		std::vector<Assembly> asems;
 		std::map<std::string, uint32_t> labels;
 	public:
@@ -52,7 +52,7 @@ class Simulator{
 
 enum OperandKind	 str_to_op(std::string asem_str);
 struct Assembly		 parse_inst(std::vector<std::string> asem_vec);
-struct Label		 parse_label(std::vector<std::string> asem_vec);
+struct Direc		 parse_direc(std::vector<std::string> asem_vec);
 std::vector<std::string> parse_line(const std::string &line);
 void			 parse_asem(Simulator &sim, const std::string &line);
 void 			 readfile(Simulator &sim, const std::string &filepath);
