@@ -55,8 +55,11 @@ void parse_asem(Simulator &sim, const std::string &line){
 
 	asem_str = parse_line(line);
 
+	// label
+	if(asem_str[0].back() == ':'){
+		std::cout << asem_str[0] << std::endl;
 	// directive
-	if(asem_str[0][0] == '.'){
+	}else if(asem_str[0][0] == '.'){
 		struct Direc direc = parse_direc(asem_str);
 		//sim.inst.add_direc(parsed);
 	// instruction
