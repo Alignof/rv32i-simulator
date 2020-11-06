@@ -21,5 +21,9 @@ if(NOT without-test)
 	enable_testing()
 	add_subdirectory(test)
 	add_custom_target(unit
-		./test/unittest)
+		./test/unittest
+	)
+	add_custom_target(run
+		./riscv-sim
+	)
 endif()
