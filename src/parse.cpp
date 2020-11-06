@@ -61,7 +61,7 @@ enum OperandKind str_to_op(std::string asem_str){
 	if(asem_str == "sraw")		return OP_SRAW;
 
 	std::cerr << "operand not found:" << asem_str << std::endl;
-	exit(1);
+	//exit(1);
 }
 
 

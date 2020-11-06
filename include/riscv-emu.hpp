@@ -30,6 +30,7 @@ class Instructions{
 			;
 		}
 		void add_label(std::string name){
+			name.pop_back(); // remove ':'
 			labels.emplace(name, asems.size());
 		}
 };
