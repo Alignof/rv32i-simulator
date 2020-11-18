@@ -25,11 +25,13 @@ namespace{
 		EXPECT_EQ("a5"    , parsed_str[2]);
 		EXPECT_EQ("%lo(a)", parsed_str[3]);
 	}
+
 	TEST(parsing_test, parse_op){
 		EXPECT_EQ(OP_ADDI,  str_to_op("addi"));
 		EXPECT_EQ(OP_SUB,   str_to_op("sub"));
 		EXPECT_EQ(OP_LD,    str_to_op("ld"));
 		EXPECT_EQ(OP_OR,    str_to_op("or"));
-		EXPECT_EQ(OP_ECALL, str_to_op("ecall"));
+		EXPECT_EQ(OP_ECALL, str_to_op("call"));
+		EXPECT_NE(OP_ECALL, str_to_op("ecall"));
 	}
 }

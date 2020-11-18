@@ -38,7 +38,7 @@ enum OperandKind str_to_op(std::string asem_str){
 	if(asem_str == "or")	 	return OP_OR;
 	if(asem_str == "and")	 	return OP_AND;
 	if(asem_str == "fence")	 	return OP_FENCE;
-	if(asem_str == "ecall")	 	return OP_ECALL;
+	if(asem_str == "call")	 	return OP_ECALL;
 	if(asem_str == "ebreak") 	return OP_EBREAK;
 	if(asem_str == "csrrw")		return OP_CSRRW;
 	if(asem_str == "csrrs")		return OP_CSRRS;
@@ -59,6 +59,7 @@ enum OperandKind str_to_op(std::string asem_str){
 	if(asem_str == "sllw")		return OP_SLLW;
 	if(asem_str == "srlw")		return OP_SRLW;
 	if(asem_str == "sraw")		return OP_SRAW;
+	//if(asem_str == "ecall") 	return OP_ECALL;
 
 	std::cerr << "operand not found:" << asem_str << std::endl;
 	//exit(1);
