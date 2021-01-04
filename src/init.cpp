@@ -68,9 +68,6 @@ void parse_asem(Simulator &sim, const std::string &line){
 		struct Assembly insts = parse_inst(asem_str);
 		//sim.inst.add_inst(parsed);
 	}
-
-
-	return;
 }
 
 void readfile(Simulator &sim, const std::string &filepath){
@@ -81,6 +78,4 @@ void readfile(Simulator &sim, const std::string &filepath){
 	while(getline(ifs, line)){
 		parse_asem(sim, line);
 	}
-
-	return;
 }
