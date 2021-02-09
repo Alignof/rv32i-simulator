@@ -15,8 +15,15 @@ add_subdirectory(src)
 add_executable(${PROJECT_NAME} src/main.cpp)
 target_link_libraries(${PROJECT_NAME} libs)
 
+
 # tests
 if(NOT without-test)
 	enable_testing()
 	add_subdirectory(test)
+	add_custom_target(unit
+		./test/unittest
+	)
+	add_custom_target(run
+		./riscv-sim
+	)
 endif()

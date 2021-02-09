@@ -1,6 +1,6 @@
-rm -rf build
+rm -rf ./build
 mkdir build
-cd build
+cd ./build
 cmake ..
 make
-./test/unittest
+make unit
